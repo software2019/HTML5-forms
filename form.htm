@@ -17,6 +17,15 @@
     <!-- Header -->
     <header>
       <img src="media/logo.png" alt="Habitat for Humanity logo" />
+      <form class="floatright">
+        <input type="search" name="websearch" placeholder="Enter search" />
+        <button
+          type="submit"
+          formaction="http://ss1.ciwcertified.com/cgibin/process.pl"
+        >
+          Search Web
+        </button>
+      </form>
     </header>
     <!-- end of Header -->
     <!-- Navigation -->
@@ -54,15 +63,47 @@
         </p>
         <!-- form -->
         <form>
-          First name: <input type="text" name="firstname" /><br />
-          Last name: <input type="text" name="lastname" /><br />
-          Date of Birth: <input type="date" name="dob" /> <br />
-          Years of Home Building Experience: 0
-          <input type="range" name="experience" min="0" max="10" /> 10+
-          <p>
-            Number of Habitat Homes Built:
-            <input type="number" name="homesbuilt" min="0" max="5" />
-          </p>
+          <fieldset name="personal-info">
+            <legend>Personal Information:</legend>
+            First name: <input type="text" name="firstname" /><br />
+            Last name: <input type="text" name="lastname" /><br />
+            Date of Birth: <input type="date" name="dob" /> <br />
+            <!-- datalist -->
+            Your Continent:
+            <input list="continents" name="continent" />
+            <datalist id="continents">
+              <option value="North America"> </option>
+              <option value="South America"> </option>
+              <option value="Europe"> </option>
+              <option value="Asia"> </option>
+              <option value="Africa"> </option>
+              <option value="Australia"> </option>
+              <option value="Antarctica"> </option>
+            </datalist>
+            <!-- text area -->
+            <p>
+              Reason for Volunteering: <br />
+              <textarea
+                name="reason"
+                id="reason"
+                placeholder="I want to build houses for Habitat for Humanity because...(140 characters maximum)"
+                maxlength="140"
+                rows="3"
+                cols="30"
+              ></textarea>
+            </p>
+            <!-- end of text area -->
+          </fieldset>
+          <br />
+          <fieldset name="user-experience">
+            <legend>Experience:</legend>
+            Years of Home Building Experience: 0
+            <input type="range" name="experience" min="0" max="10" /> 10+
+            <p>
+              Number of Habitat Homes Built:
+              <input type="number" name="homesbuilt" min="0" max="5" />
+            </p>
+          </fieldset>
         </form>
       </article>
     </section>
